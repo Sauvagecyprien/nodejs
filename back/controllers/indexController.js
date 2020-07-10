@@ -31,7 +31,7 @@ controller.showcreated = async (req,res) => {
     const votes = await Vote.find({status:  created}).populate('createdBy').exec()
     console.log(votes)
     res.render('./index' , {
-        title: "sujet",
+        title: "application Node.js",
         votes: votes
     })
 }
