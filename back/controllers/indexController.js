@@ -26,7 +26,15 @@ controller.test = async (req, res) => {
 
 }
 
-
+controller.showcreated = async (req,res) => {
+    const created = 'created' ;
+    const votes = await Vote.find({status:  created}).populate('createdBy').exec()
+    console.log(votes)
+    res.render('./index' , {
+        title: "sujet",
+        votes: votes
+    })
+}
 
 
 

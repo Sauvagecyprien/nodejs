@@ -3,11 +3,28 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const dotenv = require('dotenv').config()
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+/***************Mongodb configuratrion********************/
+const mongoose = require('mongoose');
+var configDB = require('./config/database.js');
+//configuration ===============================================================
+mongoose.connect(configDB.url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+}).then(() => {
+  //connection established successfully
+  console.log('connection established successfully')
+}).catch(); {
+  //catch any error during the initial connection
+}
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

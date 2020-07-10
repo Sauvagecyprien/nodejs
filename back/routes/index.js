@@ -20,7 +20,8 @@ var usersController = require('../controllers/userController.js');
 
 
 
-router.get('/', indexController.test);
+//router.get('/', indexController.test);
+router.get('/', indexController.showcreated);
 
 
 
