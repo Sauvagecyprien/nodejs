@@ -21,7 +21,7 @@
 <body class="container">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">AppliNode.js</a>
+    <a class="navbar-brand" href="/">AppliNode.js</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,7 +46,9 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="#">connexion/déconnexion</a>
+            <li class="nav-item"><%= locals.currentUser.login %></li>
+            <li style="width: 15px">  </li>
+            <li class="nav-item"><a href="/logout">déconnexion</a>
             </li>
         </ul>
     </div>

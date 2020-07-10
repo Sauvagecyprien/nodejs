@@ -21,8 +21,11 @@ var usersController = require('../controllers/userController.js');
 
 
 //router.get('/', indexController.test);
-router.get('/', indexController.showcreated);
-
+router.get('/', indexController.login);
+router.post('/login', indexController.login);
+router.get('/logout', indexController.logout);
+router.get('/login',indexController.visulogin);
+router.get('/creation', indexController.showcreated);
 
 
 
